@@ -1,0 +1,32 @@
+<com.androidhive.dashboard.DashboardLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:layout_weight="1"
+    android:background="#f8f9fe" >
+    <Button 
+        android:text="BOTAO1"
+        style="@style/DashboardButton"
+        />
+    <Button 
+        android:text="BOTAO2"
+        style="@style/DashboardButton"
+        />
+    <Button 
+        android:text="BOTAO3"
+        style="@style/DashboardButton"
+        />
+    <Button 
+        android:text="BOTAO4"
+        style="@style/DashboardButton"
+        />
+    <Button 
+        android:text="BOTAO5"
+        style="@style/DashboardButton"
+        />
+    <Button 
+        android:text="BOTAO6"
+        style="@style/DashboardButton"
+        />
+    
+</com.androidhive.dashboard.DashboardLayout>
