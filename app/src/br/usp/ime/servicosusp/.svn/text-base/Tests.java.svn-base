@@ -1,0 +1,196 @@
+package br.usp.ime.servicosusp;
+
+import android.database.sqlite.SQLiteDatabase;
+
+public class Tests {
+	static void insertData(){
+		
+		SQLiteDatabase db = servicosUsp.dbHelper.getWritableDatabase();
+		//Create Tables
+		
+		db.execSQL("create table categoria(codctg integer primary key, nomctg varchar(20))");
+		db.execSQL("create table local(codloc integer primary key, sglloc varchar(30), nomloc  varchar(40), endloc varchar(100), cep varchar(10), urlphoto1 varchar(100), urlphoto2 varchar(100), urlphoto3 varchar(100), posLat INTEGER, posLong INTEGER  )");
+		db.execSQL("create table servico(codsrv integer primary key, codctg integer, codloc integer, nomsrv varchar(80), descsrv varchar(150), keywords varchar(30), cplloc varchar(30), tel1 varchar(15), tel2 varchar(15), email varchar(60), link varchar(60) )");		
+		
+		//Table Categorias
+
+		db.execSQL("insert into categoria(codctg,nomctg) values(1,'Ensino')");
+		db.execSQL("insert into categoria(codctg,nomctg) values(2,'Restaurantes')");
+		db.execSQL("insert into categoria(codctg,nomctg) values(3,'Transportes')");
+		db.execSQL("insert into categoria(codctg,nomctg) values(4,'Esporte&Lazer')");
+		db.execSQL("insert into categoria(codctg,nomctg) values(5,'Bibliotecas')");
+		db.execSQL("insert into categoria(codctg,nomctg) values(6,'Artes')");
+		db.execSQL("insert into categoria(codctg,nomctg) values(7,'AuditĂłrios')");
+
+		//Table Local
+		// Ghost building - hosting the services not assigned to any building; must be included in the DB
+		// It must have CODLOC = 0 !!!
+		db.execSQL("insert into local(codloc,sglloc,nomloc,endloc,cep, urlphoto1,urlphoto2,urlphoto3,posLat,posLong) " +
+				"values(0,'-','<Sem predio>', '','','','','','','')");
+		
+				
+		db.execSQL("insert into local(codloc,sglloc,nomloc,endloc,cep, urlphoto1,urlphoto2,urlphoto3,posLat,posLong) " +
+					"values(1,'USP/P1','USP Portaria 1', 'Cruzamento da Av. AfrĂ˘nio Peixoto com Rua Alvarenga.Cidade Universitaria-SP-Brasil'," +
+					"'05508-090','http://www.usp.br/cocesp/imagens/noticias/P1_2.JPG','','','-23565141','-46712480')");
+		db.execSQL("insert into local(codloc,sglloc,nomloc,endloc,cep, urlphoto1,urlphoto2,urlphoto3,posLat,posLong) " +
+					"values(2,'USP/P2','USP Portaria 2', 'Cidade Universitaria-SP-Brasil'," +
+					"'05508-090','http://cbk3.google.com/cbk?output=thumbnail&cb_client=maps_sv&thumb=2&thumbfov=120&ll=-23.550702,-46.732247&cbll=-23.550696,-46.732293&thumbpegman=1&w=300&h=118','','','-23550664','-46732221' )");
+		db.execSQL("insert into local(codloc,sglloc,nomloc,endloc,cep, urlphoto1,urlphoto2,urlphoto3,posLat,posLong) " +
+					"values(3,'USP/P3','USP Portaria 3', 'Cidade Universitaria-SP-Brasil'," +
+				"'05508-090','http://www.usp.br/cocesp/imagens/noticias/P%203.JPG','','','-23569114','-46741276')");
+		
+		db.execSQL("insert into local(codloc,sglloc,nomloc,endloc,cep, urlphoto1,urlphoto2,urlphoto3,posLat,posLong) " +
+					"values(4,'IME','Instituto de Matematica e Estatistica', 'Rua do Matao, 1010 - Cidade Universitaria-SP-Brasil'," +
+					"'05508-090','http://upload.wikimedia.org/wikipedia/commons/9/90/Ime_usp.JPG','http://www.ime.usp.br/~act/ime.jpg',"+
+					"'http://lh4.ggpht.com/andre.java/SPK_-ZKsLgI/AAAAAAAAAjY/ujraBFr8t24/DSC01291.JPG','-23559391','-46732067' )");
+		
+		db.execSQL("insert into local(codloc,sglloc,nomloc,endloc,cep, urlphoto1,urlphoto2,urlphoto3,posLat,posLong) " +
+					"values(5,'IOUSP','Instituto Oceanografico', 'PraĂ§a do Oceanografico, 191 Cidade Universitaria-SP-Brasil'," +
+					"'05508-120','http://www.io.usp.br/show_image.php?id=99','http://www.io.usp.br/show_image.php?id=100','','-23560904','-46731919')");		
+		db.execSQL("insert into local(codloc,sglloc,nomloc,endloc,cep, urlphoto1,urlphoto2,urlphoto3,posLat,posLong) " +
+					"values(6,'COSEAS','Coordenadoria de AssistĂŞncia Social', 'Rua do Anfiteatro, 295 Cidade Universitaria-SP-Brasil'," +
+					"' 05508-040','','','','-23560904','-46731919' )");
+		db.execSQL("insert into local(codloc,sglloc,nomloc,endloc,cep, urlphoto1,urlphoto2,urlphoto3,posLat,posLong) " +
+					"values(7,'COSEAS','COSEAS-Restaurante Central', 'PraĂ§a do RelĂłgio Solar, travessa 8, nÂş 300 Cidade Universitaria-SP-Brasil'," +
+					"'','','','','-23560342','-46721578' )");
+		db.execSQL("insert into local(codloc,sglloc,nomloc,endloc,cep, urlphoto1,urlphoto2,urlphoto3,posLat,posLong) " +
+					"values(8,'IQUSP','Instituto Quimica', 'Av. Lineu Prestes, 748 - Instituto de QuĂ­micas - Cidade Universitaria-SP-Brasil'," +
+					"'','','','','-23565115','-46725554')");		
+		db.execSQL("insert into local(codloc,sglloc,nomloc,endloc,cep, urlphoto1,urlphoto2,urlphoto3,posLat,posLong) " +
+					"values(9,'IFUSP','Instituto Fisica', 'Rua do MatĂŁo, 187, Travessa R, Cidade Universitaria-SP-Brasil'," +
+					"'05508-090','','','','-23565823','-46730490')");		
+		db.execSQL("insert into local(codloc,sglloc,nomloc,endloc,cep, urlphoto1,urlphoto2,urlphoto3,posLat,posLong) " +
+					"values(10,'FSP','Saude Publica', 'Av. Dr. Arnaldo, 715 - Faculdade de SaĂşde PĂşblica, Cerqueira Cesar-SP-Brasil'," +
+					"'','','','','-23551818','-46673241')");		
+		db.execSQL("insert into local(codloc,sglloc,nomloc,endloc,cep, urlphoto1,urlphoto2,urlphoto3,posLat,posLong) " +
+				"values(11,'COCESP','Coordenadoria do Campus da Capital ESP', 'Av. Prof. Almeida Prado, nÂş 1280 Butanta - SP Brasil'," +
+				"'','','','','-23558916','-46738336')");	
+		db.execSQL("insert into local(codloc,sglloc,nomloc,endloc,cep, urlphoto1,urlphoto2,urlphoto3,posLat,posLong) " +
+				"values(12,'FD','Faculdade de Direito', 'Rua Riachuelo, 194 - Faculdade de Direito - Largo SĂŁo Francisco - SP Brasil'," +
+				"'','','','','-23540803','-46637192')");	
+		db.execSQL("insert into local(codloc,sglloc,nomloc,endloc,cep, urlphoto1,urlphoto2,urlphoto3,posLat,posLong) " +
+				"values(13,'EE','Escola de Enfermagem','Avenida Doutor EnĂ©as de Carvalho Aguiar, 419 - Cerqueira Cesar - SP Brasil'," +
+				"'','','','','-2355473','-46671009')");	
+		db.execSQL("insert into local(codloc,sglloc,nomloc,endloc,cep, urlphoto1,urlphoto2,urlphoto3,posLat,posLong) " +
+				"values(14,'Clube Professores','Clube Professores','Rua do MatĂŁo, 801 - Clube dos Professores - Cidade UniversitĂˇria - SP Brasil'," +
+				"'http://cbk0.google.com/cbk?output=thumbnail&cb_client=maps_sv&thumb=2&thumbfov=120&ll=-23.561434,-46.729988&cbll=-23.561415,-46.729980&thumbpegman=1&w=300&h=118','','','','-2356126','-46729782')");	
+		db.execSQL("insert into local(codloc,sglloc,nomloc,endloc,cep, urlphoto1,urlphoto2,urlphoto3,posLat,posLong) " +
+				"values(15,'MAC','Museu de Arte Contemporanea da USP','Rua da PraĂ§a do RelĂłgio, 160 - Cidade UniversitĂˇria - SP Brasil'," +
+				"'http://mw2.google.com/mw-panoramio/photos/medium/3727718.jpg','','','','-23554651','-46720619')");
+		db.execSQL("insert into local(codloc,sglloc,nomloc,endloc,cep, urlphoto1,urlphoto2,urlphoto3,posLat,posLong) " +
+				"values(16,'FFLCH','Faculdade de Filosofia Letras E Ciencias Humanas - USP','Av. Prof. Lineu Prestes - travessa 12, nÂş 350 - Cidade UniversitĂˇria - SP Brasil'," +
+				"'','','','','-23562681','-46725930')");
+		db.execSQL("insert into local(codloc,sglloc,nomloc,endloc,cep, urlphoto1,urlphoto2,urlphoto3,posLat,posLong) " +
+				"values(17,'Casa Cultura Japonesa','Casa da Cultura Japonesa','Av. Prof. Lineu Prestes, nÂş 159 (PrĂ©dio da Casa de Cultura Japonesa)  - Cidade UniversitĂˇria - SP Brasil'," +
+				"'','','','','-23546573','-46720505' )");
+		db.execSQL("insert into local(codloc,sglloc,nomloc,endloc,cep, urlphoto1,urlphoto2,urlphoto3,posLat,posLong) " +
+				"values(18,'CEPEUSP','Centro de Praticas Esportivas da USP','PraĂ§a 02, Prof. RubiĂŁo Meira, 61 - Cidade Universitaria - SP Brasil'," +
+				"'http://www.cepe.usp.br/cepe//site/files/banners/cepeusp.jpg','','','','-23561279','-46718028')");
+		db.execSQL("insert into local(codloc,sglloc,nomloc,endloc,cep, urlphoto1,urlphoto2,urlphoto3,posLat,posLong) " +
+				"values(19,'CEPEUSP','CEPEUSP - Raia Olimpica ','Cidade Universitaria - SP Brasil'," +
+				"'http://www.cepe.usp.br/cepe//site/files/banners/cepeusp.jpg','','','','-23556244','-46721537')");
+		db.execSQL("insert into local(codloc,sglloc,nomloc,endloc,cep, urlphoto1,urlphoto2,urlphoto3,posLat,posLong) " +
+				"values(20,'Anfiteatro C.Guarnieri','Anfiteatro Camargo Guarnieri','Rua do Anfiteatro, 109 - Cidade Universitaria - SP Brasil'," +
+				"'','','','','-23557941','-46720995')");
+		
+		db.execSQL("insert into local(codloc,sglloc,nomloc,endloc,cep, urlphoto1,urlphoto2,urlphoto3,posLat,posLong) " +
+				"values(21,'PRCEU','Colmeia - Favo 17 - Auditorio da Pro-Reitoria de Cultura','Rua do Anfiteatro, 300 - Cidade Universitaria - SP Brasil'," +
+				"'','','','','-23558526','-46721488')");
+		
+			
+		//Table Servicos
+		
+		//Ensino
+		db.execSQL("insert into servico(codsrv, codctg, codloc, nomsrv, descsrv, keywords, cplloc, tel1,tel2, email,link) " +
+				"values(1,1,4,'Matricula PosGraduacao IME','ServiĂ§o de Pos GraduaĂ§ao - Matricula de alunos.'," +
+				"'Matricula IME PosGraduaĂ§ao','Bloco B, sala X, andar terreo','3091-6135','','ade@ime.usp.br','http://www.ime.usp.br/')");
+						
+		db.execSQL("insert into servico(codsrv, codctg, codloc, nomsrv, descsrv, keywords, cplloc, tel1,tel2, email,link) " +
+					"values(2,1,5,'Matricula PosGraduacao IO','ServiĂ§o de Pos GraduaĂ§ao - Matricula de alunos.', "+
+					"'Matricula IO PosGraduaĂ§ao','andar terreo','(11) 3091-6528','','cpg-io@usp.br','http://www.io.usp.br/')");
+				
+		db.execSQL("insert into servico(codsrv, codctg, codloc, nomsrv, descsrv, keywords, cplloc, tel1,tel2, email,link) " +
+				"values(3,1,5,'Matricula Graduacao IO','ServiĂ§o de GraduaĂ§ao - Matricula de Alunos de GraduaĂ§ao'," +
+				"'Matricula IO GraduaĂ§ao','andar terreo','','','','http://www.io.usp.br/')");
+		
+		db.execSQL("insert into servico(codsrv, codctg, codloc, nomsrv, descsrv, keywords, cplloc, tel1,tel2, email,link) " +
+				"values(4,1,17,'Centro de LĂ­nguas FFLCH','Cursos de Lingua Estrangeira e Portugues.',"+
+					"'CEPE raia olimpica','','(11)3091-2416','','clprofic@usp.br','http://clinguas.fflch.usp.br/')");
+	
+		//Restaurantes
+		//Central, Quimica, Fisica
+				
+		db.execSQL("insert into servico(codsrv, codctg, codloc, nomsrv, descsrv, keywords, cplloc, tel1,tel2, email,link) " +
+					"values(5,2,7,'Restaurante Central','Restaurante Central para Comunidade USP.'," +
+					"'Restaurante bandejao COSEAS','http://www.usp.br/coseas/COSEASHP/ALM/Rest%20Central/DSC04044.JPG','','','','http://www.usp.br/coseas/cardapio.html')");
+		db.execSQL("insert into servico(codsrv, codctg, codloc, nomsrv, descsrv, keywords, cplloc, tel1,tel2, email,link) " +
+					"values(6,2,8,'Restaurante Quimica','Restaurante da Quimica para  Comunidade USP.'," +
+					"'Restaurante bandejao Quimica','','','','','http://www.usp.br/coseas/cardapioquimica.html')");
+		db.execSQL("insert into servico(codsrv, codctg, codloc, nomsrv, descsrv, keywords, cplloc, tel1,tel2, email,link) " +
+					"values(7,2,9,'Restaurante Fisica','Restaurante da Fisica para  Comunidade USP.'," +
+					"'Restaurante bandejao Fisica','','','','','http://www.usp.br/coseas/cardapiofisica.html')");
+		db.execSQL("insert into servico(codsrv, codctg, codloc, nomsrv, descsrv, keywords, cplloc, tel1,tel2, email,link) " +
+					"values(8,2,10,'Restaurante FSP','Restaurante da Faculdade de Saude Publica  Comunidade USP.'," +
+					"'Restaurante bandejao Saude','','','','','')");
+		db.execSQL("insert into servico(codsrv, codctg, codloc, nomsrv, descsrv, keywords, cplloc, tel1,tel2, email,link) " +
+					"values(9,2,11,'Restaurante COCESP','Restaurante da COCESP para  Comunidade USP.'," +
+					"'Restaurante bandejao Prefeitura','','','','','http://www.usp.br/coseas/cardcocesp.html')");
+		db.execSQL("insert into servico(codsrv, codctg, codloc, nomsrv, descsrv, keywords, cplloc, tel1,tel2, email,link) " +
+					"values(10,2,14,'Restaurante Clube Professores','Restaurante Clube dos Professores para  Comunidade USP.'," +
+					"'Restaurante professores docente','','','','','http://www.usp.br/coseas/carddoc.html')");
+				
+		// Bilhete Unico - 3
+				
+		db.execSQL("insert into servico(codsrv, codctg, codloc, nomsrv, descsrv, keywords, cplloc, tel1,tel2, email,link) " +
+					"values(11,3,6,'Transportes Bilhete Unico','AquisiĂ§ao do Bilhete Unico.'," +
+					"'Bilhete transporte COSEAS','','','','','')");
+				
+				
+		// Esporte & Lazer - 4
+				
+		db.execSQL("insert into servico(codsrv, codctg, codloc, nomsrv, descsrv, keywords, cplloc, tel1,tel2, email,link) " +
+					"values(12,4,18,'Esporte&lazer CEPE','Praticas esportivas, cursos e lazer. Ă�rea com quadras de esportes e piscina para funcionĂˇrios, alunos, docentes e comunidade externa.'," +
+					"'CEPE esportes piscina','','','','','http://www.cepe.usp.br/site/')");
+		db.execSQL("insert into servico(codsrv, codctg, codloc, nomsrv, descsrv, keywords, cplloc, tel1,tel2, email,link) " +
+				"values(13,4,19,'Esporte&lazer Raia Olimpica','A Raia OlĂ­mpica, paralela Ă  marginal do Rio Pinheiros, Ă© um conjunto esportivo destinado Ă  prĂˇtica do remo e da canoagem. "+"" +
+						"Conta com vestiĂˇrios, sala de musculaĂ§ĂŁo, pista rĂşstica, barcos e garagem.',"+
+					"'CEPE raia olimpica','','','','','http://www.cepe.usp.br/site/')");
+		
+		// Biblioteca-5
+		
+		db.execSQL("insert into servico(codsrv, codctg, codloc, nomsrv, descsrv, keywords, cplloc, tel1,tel2, email,link) " +
+				"values(14,5,16,'Biblioteca FLORESTAN FERNANDES FFLCH','ServiĂ§o de Biblioteca.',"+
+					"'CEPE raia olimpica','','(11)3091-4377','','saufflch@usp.br','http://biblioteca.fflch.usp.br/')");
+		db.execSQL("insert into servico(codsrv, codctg, codloc, nomsrv, descsrv, keywords, cplloc, tel1,tel2, email,link) " +
+				"values(15,5,4,'Biblioteca Prof.Carlos Benjamin de Lyra IME','ServiĂ§o de Biblioteca.',"+
+					"'Ime biblioteca matematica','','(11)3091-6109','','bib@ime.usp.br','http://www.ime.usp.br/bib')"); 
+		
+		//Artes - 6
+		
+		db.execSQL("insert into servico(codsrv, codctg, codloc, nomsrv, descsrv, keywords, cplloc, tel1,tel2, email,link) " +
+				"values(16,6,15,'Artes - MAC-Museu de Arte Contemporanea','Museu de Arte Contemporanea. EspaĂ§o para exposiĂ§Ăµes de obras de arte.',"+
+					"'MAC museu arte','','','','','http://www.mac.usp.br/mac/')");
+		db.execSQL("insert into servico(codsrv, codctg, codloc, nomsrv, descsrv, keywords, cplloc, tel1,tel2, email,link) " +
+				"values(17,6,21,'Artes - CoralUsp/OSUSP','Coral e Orquestra da USP. A participaĂ§ao no Coral e cursos de extensĂŁo Ă© gratuita para a comunidade USP e publico externo.',"+
+					"'PRCEU coral orquestra','','(11)3091-5071','','coralusp@usp.br','http://www.usp.br/coralusp')"); 
+		
+		// AuditĂłrios
+		
+		db.execSQL("insert into servico(codsrv, codctg, codloc, nomsrv, descsrv, keywords, cplloc, tel1,tel2, email,link) " +
+				"values(18,7,20,'Auditorio - Anfiteatro Camargo Guarnieri','Anfiteatro para concertos, congressos e eventos.',"+
+					"'musica auditorio arte','','','','','www.usp.br')");
+		db.execSQL("insert into servico(codsrv, codctg, codloc, nomsrv, descsrv, keywords, cplloc, tel1,tel2, email,link) " +
+				"values(19,7,21,'Auditorio - Favo 17','AuditĂłrio para seminarios e palestras.',"+
+					"'PRCEU coral orquestra','','(11)3091-5071','','coralusp@usp.br','http://www.usp.br/coralusp')"); 
+
+		
+		
+		
+		
+		
+		// Bilhete USP
+		db.execSQL("insert into servico(codsrv, codctg, codloc, nomsrv, descsrv, keywords, cplloc, tel1,tel2, email,link) " +
+				"values(20,3,0,'Bilhete USP','Este bilhete permiti para usar os Circulars em grata. Para receber Bilhete USP" + 
+				" perguntar na secretaria da seu programacao.','Bilhete USP Onibus Circular','','','','','')"); 
+	}
+}

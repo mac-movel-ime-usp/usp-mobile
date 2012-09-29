@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width  = "match_parent"
+    android:layout_height = "match_parent"
+    android:orientation   = "vertical" >
+    
+<TextView
+    android:focusable="true" android:focusableInTouchMode="true"
+    android:layout_width="0px" android:layout_height="0px" />
+
+<LinearLayout android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+     >
+     
+    <ImageView 
+        android:src="@drawable/actionsearch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="Search"
+        android:layout_gravity="center_vertical"
+        />
+    
+    <EditText
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:inputType="text"
+        android:id="@+id/editFilter"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:nextFocusUp="@id/editFilter"
+        android:nextFocusLeft="@id/editFilter"
+        />
+    
+    
+</LinearLayout>
+    
+    <ListView 
+        android:id="@+id/listBuildings"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:scrollbars="vertical"
+    />
+
+</LinearLayout>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/main_options_item1"
+        android:icon="@drawable/menu_settings"
+        android:title="@string/settings">
+    </item>
+    <item
+        android:id="@+id/main_options_item2"
+        android:icon="@drawable/menu_update"
+        android:title="@string/dbUpdate">
+    </item>
+    <item
+        android:id="@+id/main_options_item3"
+        android:icon="@drawable/menu_home"
+        android:title="@string/home">
+    </item>
+    <item
+        android:id="@+id/main_options_item4"
+        android:icon="@drawable/menu_info"
+        android:title="@string/about">
+    </item>
+
+</menu>

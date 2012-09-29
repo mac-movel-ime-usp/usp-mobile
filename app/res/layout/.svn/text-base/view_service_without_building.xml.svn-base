@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:scrollbars="vertical" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/tvBuildingAbv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/ghostTitle"
+            android:background="#0099CC"
+            android:textColor="#FFFFFF"
+            android:textSize="20pt"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tvBuildingName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="40dp"
+            android:text="@string/ghostDescription"
+            android:gravity="right"
+            android:textSize="10pt" />
+
+        <TextView
+            android:id="@+id/tvServiceNameLabel"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="#0099CC"
+            android:text="@string/serviceName"
+            android:textColor="#000000"
+            android:textSize="10pt"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tvServiceName"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:background="#FFFFFF"
+            android:textColor="#555555"
+            android:textSize="10pt"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tvServiceDescLabel"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="#0099CC"
+            android:text="@string/serviceDescription"
+            android:textColor="#000000"
+            android:textSize="10pt"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tvServiceDescription"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:background="#FFFFFF"
+            android:textColor="#555555"
+            android:textSize="10pt"
+            android:textStyle="bold" />
+        
+         <TextView
+            android:id="@+id/tvServiceLink"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:background="#FFFFFF"
+            android:textColor="#555555"
+            android:textSize="10pt"
+            android:textStyle="bold" />
+        
+	</LinearLayout>
+
+</ScrollView>

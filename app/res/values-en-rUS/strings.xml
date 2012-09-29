@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Serviços USP</string>
+
+    <!-- Strings used in Dashboard -->
+    <string name="mainVisServices">Services</string>
+    <string name="mainVisBuildings">Buildings</string>
+    <string name="mainCategories">Categories</string>
+    <string name="mainShowMap">Map of USP</string>
+
+    <color name="backgroundColor">#F0F0F0</color>
+
+    <!-- Strings used in MapView -->
+    <string name="goTo">Go to</string>
+    <string name="rtrn">Return</string>
+
+    <!-- Strings of the main options menu -->
+    <string name="home">Return home</string>
+    <string name="about">About Servicos USP</string>
+    <string name="dbUpdate">Check for DB update</string>
+    <string name="settings">Configurations</string>
+
+    <!-- Strings from About view -->
+    <string name="aboutViewTitle">About Serviços USP</string>
+    <string name="aboutViewBody">This application was created during the Mobile Computation course. All copyrights reserved. ©2012</string>
+    <string name="aboutViewAuthors">Authors:</string>
+    <string name="aboutViewAuthorsNames">Damian Matuszewski, Guilherme Wachs Lopes, Tânia Almeida Ferreira de Sousa</string>
+
+    <!-- Strings from Circular view -->
+    <string name="circularTitle">Circular</string>
+    <string name="circularBody">Circular is the common name given to the public bus that has its route all around USP. 
+        It also connects Butanta Metro station with the university city. To use it for free students and the University employees need to have the Bilhete USP.</string>
+    <string name="circularButtonShowPaths">Show Circular paths on map</string>
+
+    <!-- Strings for View Services -->
+    <string name="servicesImageDescription">Search </string>
+    <string name="servicesSpinnerPrompt">Filter </string>
+
+    <!-- Strings for View Service Details -->
+    <string name="serviceName">Service name: </string>
+    <string name="serviceDescription">Description of the Service: </string>
+    <string name="serviceAddress">Address: </string>
+
+    <!-- Strings for View Buildings Details -->
+    <string name="avaluableServices">Available Services: </string>
+    <string name="photos">Building pictures</string>
+    <string name="complement">Complementary data</string>
+    <string name="map">Show on map</string>
+    <string name="route">Go to</string>
+
+    <!-- Strings for ghost building -->
+    <string name="ghostTitle">Without predefined Building</string>
+    <string name="ghostDescription">Check the description of each Service</string>
+    <string name="ghostAvailableServices">Available Services: </string>
+
+    <!-- Strings for the Main Activity view -->
+    <string-array name="options_mainActivity">
+        <item>List Services</item>
+        <item>List Buildings</item>
+        <item>Categories</item>
+        <item>Show map of USP</item>
+    </string-array>
+
+    <!-- Strings for search by keyword options from the list views of services -->
+    <string-array name="options_filter">
+        <item>Filter by name</item>
+        <item>Filter by keywords</item>
+    </string-array>
+
+    <!-- Strings for search by keyword options from the list views of no services -->
+    <string name="noServiceMessage">Select a service from the list on the left</string>
+
+    <!-- Setrings for settings view -->
+    <string name="settJanusUserLbl">Janus Login:</string>
+    <string name="settJanusPassLbl">Janus Password:</string>
+    <string name="save">Save</string>
+    <string name="cancel">Cancel</string>
+
+    <style name="UspStyle" parent="@android:style/Theme.Light"></style>
+
+    <string name="janusLogon"></string>
+
+    <!-- Strings from map options menu -->
+    <string name="mapShowCircular1">Show Circular 1</string>
+    <string name="mapHideCircular1">Hide Circular 1</string>
+    <string name="mapShowCircular2">Show Circular 2</string>
+    <string name="mapHideCircular2">Hide Circular 2</string>
+
+    <!-- Strings from View Rest Details -->
+    <string name="lblcardapio">Display \n Menu </string>
+    <string name="lblcomments">Comments of the USP Society</string>
+    <string name="iconLabel">Queue</string>
+
+    <string-array name="elvFilaOptions">
+        <item>No queue - hell yeah!</item>
+        <item>Small queue</item>
+        <item>Medium queue</item>
+        <item>Big queue</item>
+        <item>Better find other place</item>
+    </string-array>
+
+    <string name="newComment">Type new comment:</string>
+    <string name="text">Text: </string>
+    <string name="tamanhoFila">Queue size: </string>
+    <string name="send">Send</string>
+
+    <!-- Strings used in labels of the views -->
+    <string name="serviceDetails">Service Details</string>
+    <string name="buildingDetails">Building Details</string>
+    <string name="janus">Janus System</string>
+    <string name="restaurantMenu">Restaurant Menu</string>
+    <string name="restaurantComments">Restaurant Comments</string>
+    <string name="updateDatabase">Database Update</string>
+
+    <!-- Dialogs -->
+    <string name="noConnection">You have no Internet access!</string>
+    <string name="noConnectionDetails">Please, connect to the Internet to use this service.</string>
+    <string name="noJanusData">Login and Password required to access Janus</string>
+    <string name="noJanusDataDetails">Please, enter/change your login data in the Configurations Panel.</string>
+    <string name="updateButton">Update</string>
+    <string name="selectAnItem">Select an item in the list beside</string>
+    <string name="acessingJanus">Acessing Janus</string>
+    <string name="acessingJanusDetails">Please wait while the system acess Janus.</string>
+    <string name="updateSucess">Update Sucess!</string>
+    <string name="updateSucessDetails">Your system is now updated!</string>
+    <string name="updateFail">Error during update!</string>
+    <string name="updateFailDetails">Please try again later!</string>
+
+</resources>

@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 29
+/svn/!svn/ver/2/trunk/scripts
+END
+googlecode_upload_py3k.py
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/2/trunk/scripts/googlecode_upload_py3k.py
+END
+googlecode_distutils_upload.py
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/2/trunk/scripts/googlecode_distutils_upload.py
+END
+googlecode_upload.py
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/2/trunk/scripts/googlecode_upload.py
+END

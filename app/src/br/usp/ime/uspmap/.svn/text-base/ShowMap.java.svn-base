@@ -1,0 +1,109 @@
+package br.usp.ime.uspmap;
+
+import java.util.List;
+import android.graphics.drawable.Drawable;
+import android.os.Bundle;
+import br.usp.ime.servicosusp.R;
+import br.usp.ime.servicosusp.model.Local;
+
+import com.google.android.maps.GeoPoint;
+import com.google.android.maps.MapActivity;
+import com.google.android.maps.MapController;
+import com.google.android.maps.MapView;
+import com.google.android.maps.MyLocationOverlay;
+import com.google.android.maps.Overlay;
+import com.google.android.maps.OverlayItem;
+
+public class ShowMap extends MapActivity {
+
+	private MapController mapController;
+	private MapView mapView;
+	private MyLocationOverlay myLocationOverlay;
+	
+	@Override
+	public void onCreate(Bundle savedInstanceState) {
+	    super.onCreate(savedInstanceState);
+	    setContentView(R.layout.showmap);
+	    
+	    // Configure the map
+	    mapView = (MapView) findViewById(R.id.mapview);
+	    mapView.setBuiltInZoomControls(true);
+	    mapController = mapView.getController();
+		mapController.setZoom(17); // Zoom 1 is world view
+    
+		createLocationMarkers();
+		displayCircularRoutes();
+				
+		// Marking current user position on the map 
+		myLocationOverlay = new MyLocationOverlay(this, mapView);
+		mapView.getOverlays().add(myLocationOverlay);
+		mapView.postInvalidate();
+			
+		myLocationOverlay.enableMyLocation();
+		
+		if(getIntent().getExtras().getBoolean("centerOnUser")){
+			myLocationOverlay.runOnFirstFix(new Runnable() { public void run() {
+//			getIntent().getExtras().getDouble(key);
+				mapController.animateTo(myLocationOverlay.getMyLocation());
+			}});
+		}
+		else {
+			GeoPoint centerPoint = new GeoPoint(getIntent().getExtras().getInt("Latitude"), getIntent().getExtras().getInt("Longitute"));
+			mapController.setZoom(19);
+			mapController.animateTo(centerPoint);
+		}
+	}
+	
+	@Override
+	protected void onResume() {
+		super.onResume();
+		myLocationOverlay.enableMyLocation();
+	}
+
+	@Override
+	protected void onPause() {
+		super.onPause();
+		myLocationOverlay.disableMyLocation();
+	}
+	
+	@Override
+	protected boolean isRouteDisplayed() {
+		return false;
+	}
+	
+	private void createLocationMarkers(){
+		// Creating new overlay of locations
+	    List<Overlay> mapOverlays = mapView.getOverlays();
+	    Drawable locationIcon = this.getResources().getDrawable(R.drawable.location);
+	    MarkOnMap locations = new MarkOnMap(locationIcon, this);
+	    
+	    int lat = 0;
+	    int lon = 0;
+	    OverlayItem local;
+	    
+	    // adding points to the custom overlay
+	    List<Local> locals = Local.getLocals();
+	    for(int i = 0; i < locals.size(); i++){
+	    	lat = locals.get(i).getPosLat();
+	    	lon = locals.get(i).getPosLong();
+	    	
+	    	local = new OverlayItem(new GeoPoint(lat, lon), locals.get(i).getAbbrevloc(), locals.get(i).getNameloc());
+		    locations.addOverlay(local);
+	    }
+	         
+	    // Adding the new overlay of locations
+	    locations.populateNow();
+	    mapOverlays.add(locations);		
+	}
+	
+	private void displayCircularRoutes(){
+	//	if(getIntent().getExtras().getBoolean("displayCircular1Route")){
+			// TODO: display route of Circular 1
+			List<Overlay> mapOverlays = mapView.getOverlays();
+			mapOverlays.add(new CircularMapOverlay(mapView.getProjection()));
+	//	}
+		if(getIntent().getExtras().getBoolean("displayCircular2Route")){
+			// TODO: display route of Circular 1
+		}
+	}
+}

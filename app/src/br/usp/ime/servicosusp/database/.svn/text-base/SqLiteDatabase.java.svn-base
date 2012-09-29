@@ -1,0 +1,5 @@
+package br.usp.ime.servicosusp.database;
+
+public class SqLiteDatabase {
+	
+}

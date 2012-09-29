@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Serviços USP</string>
+    
+    <!-- Strings used in MapView-->
+    <string name="goTo">Go to</string>
+    <string name="rtrn">Return</string>
+       
+    <!-- Strings of the main options menu -->
+    <string name="home">Return to main menu</string>
+    <string name="about">About Servicos USP</string>
+    <string name="dbUpdate">Check for DB update</string>
+  	<string name="settings">Configurações</string>
+  	
+  	<!-- Strings from About view -->
+  	<string name="aboutViewTitle">About Serviços USP</string>
+  	<string name="aboutViewBody">This application was created during the Mobile Computation course. All copyrights reserved. ©2012</string>
+  	<string name="aboutViewAuthors">Authors:</string>
+  	<string name="aboutViewAuthorsNames">Damian, Guilherme, Tânia</string>
+  	
+  	<!-- Strings from Circular view -->
+    <string name="circularTitle">Circular</string>
+    <string name="circularBody">Circular is the common name given to the public bus that has its route all around USP. 
+        It also connects Butanta Metro station with the university campus. To use it for free students and university employees need to posess the Bilhete USP.</string>
+	<string name="circularButtonShowPaths">Show Circular paths on map</string>
+
+	<!-- Strings for View Services -->
+	<string name="servicesImageDescription">Search </string>
+	<string name="servicesSpinnerPrompt">Filtro </string>
+	
+	<!-- Strings for View Service Details -->
+	<string name="serviceName">Serviço: </string>
+	<string name="serviceDescription">Descrição do serviço: </string>
+	<string name="serviceAddress">Endereço: </string>
+	
+	<!-- Strings for ghost building -->
+	<string name="ghostTitle">Sem predio definido</string>
+	<string name="ghostDescription">Cheque na descripções dos serviços</string>
+	<string name="ghostAvailableServices">Serviços disponíveis: </string>
+	
+	<!-- Strings for the Main Activity view -->
+	<string-array name="options_mainActivity">
+        <item >Visualizar Serviços</item>
+        <item >Visualizar Prédios</item>
+        <item >Categorias</item>
+        <item >Visualizar a mapa da USP</item>
+    </string-array>
+    <string name="mainVisServices">Visualizar Serviços</string>
+    <string name="mainVisBuildings">Visualizar Prédios</string>
+    <string name="mainCategories">Categorias</string>
+    <string name="mainShowMap">Mostra a mapa da USP</string>
+    
+	<!-- Strings for search by keyword options from the list views of services -->
+    <string-array  name="options_filter">
+        <item >Filtrar pelo nome</item>
+        <item >Filtrar por palavras-chave</item>
+    </string-array>
+    
+    <style 
+        parent="@android:style/Theme.Light" name="UspStyle">
+    </style>
+
+</resources>
