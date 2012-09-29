@@ -4,12 +4,6 @@ usp-mobile
 Aplicativo Android desenvolvido pelos alunos de Computação Móvel no 
 primeiro semestre de 2012, ministrada pelo professor Alfredo Goldman.
 
-Créditos
-========
-
-Código original desenvolvido por: Damian Matuszewski, Guilherme Wachs 
-Lopes e Tânia Almeida Ferreira de Sousa.
-
 Instruções para uso do mapa:
 ============================
 
